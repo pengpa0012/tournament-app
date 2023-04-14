@@ -1,8 +1,15 @@
 import jwtDecode from 'jwt-decode'
+import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 
 export const Login = () => {
   const [isSignUp, setIsSignUp] = useState(false)
+  const router = useRouter()
+  const [input, setInput] = useState({
+    email: "",
+    password: "",
+    repeatPassword: ""
+  })
   useEffect(() => {
     // @ts-ignore
     google.accounts.id.initialize({
@@ -21,11 +28,17 @@ export const Login = () => {
     )
   }, [])
 
+  const onHandleSubmit = (e: any) => {
+    e.preventDefault()
+    if(isSignUp) setIsSignUp(false)
+    else router.push("/")
+  }
+
   return (
     <div className="min-h-screen grid place-items-center">
       <div>
         <h2 className="text-center text-5xl font-bold">Welcome!</h2>
-        <form className="flex gap-4 flex-col my-6 w-[300px] sm:w-[500px] font-medium">
+        <form className="flex gap-4 flex-col my-6 w-[300px] sm:w-[500px] font-medium" onSubmit={onHandleSubmit}>
           <div>
             <label>Email</label>
             <input type="text" className="border-2 border-black rounded-md p-2 tex-xl w-full" placeholder="Enter your email" />
