@@ -4,11 +4,12 @@ import React, { useEffect, useState } from 'react'
 export const Login = () => {
   const [isSignUp, setIsSignUp] = useState(false)
   useEffect(() => {
-    /* Global Code */
+    // @ts-ignore
     google.accounts.id.initialize({
       client_id: "131185773345-hsr2aadv09lh7k0gmgnhskk6uspruevr.apps.googleusercontent.com",
-      callback: (res) => console.log(jwtDecode(res.credential))
+      callback: (res: any) => console.log(jwtDecode(res.credential))
     })
+    // @ts-ignore
     google.accounts.id.renderButton(
       document.getElementById("signInBtn"),
       {
