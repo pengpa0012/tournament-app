@@ -15,9 +15,15 @@ export default function Home() {
 
   return (
     <main>
-      <nav className="flex justify-between">
-        <h1>Logo</h1>
-        <h1>Profile</h1>
+      <nav className="flex items-center justify-between">
+        <h1 className="font-medium text-xl">Logo</h1>
+        <div className="flex">
+          <img src="https://via.placeholder.com/50x50" className="mr-4 rounded-full"/>
+          <div>
+            <h3 className="text-md truncate">Godfrey</h3>
+            <p className="text-sm">Participant</p>
+          </div>
+        </div>
       </nav>
       <div className="mt-20">
         {/* <h2 className="mb-10">Tournament List</h2>
@@ -28,10 +34,15 @@ export default function Home() {
             ))
           }
         </div> */}
+        <ul className="flex mb-4 gap-2">
+          <li className="bg-blue-500 text-white p-2 cursor-pointer rounded-md">All Tournaments</li>
+          <li className="p-2 cursor-pointer rounded-md">Player Leaderboards</li>
+          <li className="p-2 cursor-pointer rounded-md">Organizers</li>
+        </ul>
         <table className="w-full">
           <thead>
-            <tr className="flex bg-blue-500 text-white">
-              <th className="p-2 flex-1">
+            <tr className="flex bg-blue-600 text-white py-4 rounded-tl-lg rounded-tr-lg">
+              <th className="flex-1">
                 <div className="flex justify-center">
                   <GiCrossedSwords size={24} style={{ marginRight: 10 }} />
                   <span>
@@ -39,7 +50,7 @@ export default function Home() {
                   </span>
                 </div>
               </th>
-              <th className="p-2 flex-1">
+              <th className="flex-1">
                 <div className="flex justify-center">
                   <GiOrganigram size={24} style={{ marginRight: 10 }} />
                   <span>
@@ -47,7 +58,7 @@ export default function Home() {
                   </span>
                 </div>
               </th>
-              <th className="p-2 flex-1">
+              <th className="flex-1">
                 <div className="flex justify-center">
                   <BsPeopleFill size={24} style={{ marginRight: 10 }} />
                   <span>
@@ -55,7 +66,7 @@ export default function Home() {
                   </span>
                 </div>
               </th>
-              <th className="p-2 flex-1">
+              <th className="flex-1">
                 <div className="flex justify-center">
                   <GiMoneyStack size={24} style={{ marginRight: 10}} />
                   <span>
