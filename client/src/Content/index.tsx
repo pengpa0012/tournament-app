@@ -8,15 +8,18 @@ export const tabs = () => {
   return [
     {
       icon: <AiOutlineUnorderedList size={24} style={{ marginRight: 10 }} />,
-      title: "All Tournaments"
+      title: "All Tournaments",
+      route: "/"
     },
     {
       icon: <MdOutlineLeaderboard size={24} style={{ marginRight: 10 }} />,
-      title: "Player Leaderboards"
+      title: "Player Leaderboards",
+      route: "/player-leaderboards"
     },
     {
       icon: <VscOrganization size={24} style={{ marginRight: 10 }} />,
-      title: "Organizers"
+      title: "Organizers",
+      route: "/organizers"
     }
   ]
 }
@@ -42,7 +45,7 @@ export const tableHeader = () => {
   ]
 }
 
-export const playerLeaderboards = [
+export const playerLeaderboardsContent = [
   {
     rank: "1st",
     name: "Peng",
