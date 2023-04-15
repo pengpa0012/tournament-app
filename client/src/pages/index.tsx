@@ -2,12 +2,8 @@ import { Card } from "@/Components/Card"
 import Head from "next/head"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
-import { GiCrossedSwords, GiOrganigram, GiMoneyStack } from "react-icons/gi";
-import { BsPeopleFill } from "react-icons/bs";
-import { AiOutlineUnorderedList } from "react-icons/ai";
-import { MdOutlineLeaderboard } from "react-icons/md";
-import { VscOrganization } from "react-icons/vsc";
-import { tabs } from "@/Content";
+import { GiSwordsEmblem } from "react-icons/gi";
+import { playerLeaderboards, tableHeader, tabs } from "@/Content";
 
 export default function Home() {
   const [isLoggedin, setIsLoggedin] = useState(false)
@@ -22,7 +18,7 @@ export default function Home() {
     <main>
       <nav className="flex items-center justify-between">
         <h1 className="font-medium text-xl">Logo</h1>
-        <div className="flex">
+        <div className="flex cursor-pointer" onClick={() => router.push("/profile")}>
           <img src="https://via.placeholder.com/50x50" className="mr-4 rounded-full"/>
           <div>
             <h3 className="text-md truncate">Godfrey</h3>
@@ -42,7 +38,7 @@ export default function Home() {
         <ul className="flex mb-4 gap-2 font-medium">
           {
             tabs().map((item, i) => (
-              <li className={`${tab == i ? "bg-blue-500 text-white" : "hover:bg-gray-200"} p-2 cursor-pointer rounded-md flex`} onClick={() => setTab(i)}>
+              <li className={`${tab == i ? "bg-blue-500 text-white" : "hover:bg-gray-100"} p-2 cursor-pointer rounded-md flex`} onClick={() => setTab(i)}>
                 {item.icon}
                 <span>
                   {item.title}
@@ -55,45 +51,25 @@ export default function Home() {
           tab == 0 &&
           <table className="w-full">
             <thead>
-              <tr className="flex bg-blue-600 text-white py-4 rounded-tl-lg rounded-tr-lg">
-                <th className="flex-1">
-                  <div className="flex justify-center">
-                    <GiCrossedSwords size={24} style={{ marginRight: 10 }} />
-                    <span>
-                      Tournament
-                    </span>
-                  </div>
-                </th>
-                <th className="flex-1">
-                  <div className="flex justify-center">
-                    <GiOrganigram size={24} style={{ marginRight: 10 }} />
-                    <span>
-                      Organizer
-                    </span>
-                  </div>
-                </th>
-                <th className="flex-1">
-                  <div className="flex justify-center">
-                    <BsPeopleFill size={24} style={{ marginRight: 10 }} />
-                    <span>
-                      Participants
-                    </span>
-                  </div>
-                </th>
-                <th className="flex-1">
-                  <div className="flex justify-center">
-                    <GiMoneyStack size={24} style={{ marginRight: 10}} />
-                    <span>
-                      Prize Pool
-                    </span>
-                  </div>
-                </th>
+              <tr className="flex bg-blue-600 text-white py-4 rounded-tl-lg rounded-tr-lg">  
+                {
+                  tableHeader().map((item, i) => (
+                  <th className="flex-1">
+                    <div className="flex justify-center">
+                      {item.icon}
+                      <span>
+                        {item.title}
+                      </span>
+                    </div>
+                  </th>
+                  ))
+                }
               </tr>
             </thead>
             <tbody>
               {
                 [1,2,3,4,5].map((item: any, i: number) => (
-                  <tr className="text-center flex items-center border-2 border-r-0 border-l-0 border-t-0 even:bg-black/5" key={i}>
+                  <tr className="text-center flex items-center border-2 border-r-0 border-l-0 border-t-0 even:bg-gray-100 hover:bg-gray-200 cursor-pointer" key={i} onClick={() => router.push("/tournament")}>
                     <td className="p-1 flex flex-1">
                       <img src="https://via.placeholder.com/400x200" className="mx-auto w-full max-w-[150px]"/>
                       <div className="text-left ml-2">
@@ -109,6 +85,25 @@ export default function Home() {
               }
             </tbody>
           </table>
+        }
+        {
+          tab == 1 && 
+          playerLeaderboards.map((item, i) => (
+            <div className="border-2 border-r-0 border-t-0 border-l-0 p-4 flex items-center justify-between hover:bg-gray-200 cursor-pointer"  onClick={() => router.push(`/profile?id=${item.name}`)}>
+              <div className="flex items-center">
+                <h1 className="text-4xl font-bold min-w-[70px]">{item.rank}</h1>
+                <img src="https://via.placeholder.com/120x120" className="rounded-full ml-4 mr-8"/>
+                <h1 className="text-2xl">{item.name}</h1>
+              </div>
+              <h1 className="text-2xl flex items-center">
+                <GiSwordsEmblem size={24} style={{ marginRight: 10}} />
+                <span>{item.victories} Victories</span>
+              </h1>
+            </div>
+         ))
+        }
+        {
+          tab == 2 && <h1>Organizers</h1>
         }
       </div>
     </main>

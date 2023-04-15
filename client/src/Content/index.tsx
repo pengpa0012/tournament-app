@@ -20,3 +20,52 @@ export const tabs = () => {
     }
   ]
 }
+
+export const tableHeader = () => {
+  return [
+    {
+      icon: <GiCrossedSwords size={24} style={{ marginRight: 10 }} />,
+      title: "Tournament"
+    },
+    {
+      icon: <GiOrganigram size={24} style={{ marginRight: 10 }} />,
+      title: "Organizer"
+    },
+    {
+      icon: <BsPeopleFill size={24} style={{ marginRight: 10 }} />,
+      title: "Participants"
+    },
+    {
+      icon: <GiMoneyStack size={24} style={{ marginRight: 10}} />,
+      title: "Prize Pool"
+    }
+  ]
+}
+
+export const playerLeaderboards = [
+  {
+    rank: "1st",
+    name: "Peng",
+    victories: 12324
+  },
+  {
+    rank: "2nd",
+    name: "Miracle-",
+    victories: 634
+  },
+  {
+    rank: "3rd",
+    name: "AME",
+    victories: 612
+  },
+  {
+    rank: "4th",
+    name: "Arteezy",
+    victories: 430
+  },
+  {
+    rank: "5th",
+    name: "Gorgc",
+    victories: 332
+  },
+]
