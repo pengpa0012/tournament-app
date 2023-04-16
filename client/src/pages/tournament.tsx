@@ -1,4 +1,8 @@
 import React from 'react'
+import { FaRegMoneyBillAlt } from "react-icons/fa";
+import { TbTournament } from "react-icons/tb";
+import { CgCalendarDates } from "react-icons/cg";
+import { HiUsers } from "react-icons/hi";
 
 const tournament = () => {
   return (
@@ -10,14 +14,46 @@ const tournament = () => {
         </div>
         <button className="bg-blue-500 hover:bg-blue-600 rounded-full py-2 px-6 text-white text-xl">Join</button>
       </div>
-      <div className="flex justify-between items-center py-2">
-        <div className="flex gap-2">
-          <h1>Prize Pool</h1>
-          <h1>Type</h1>
-          <h1>Date</h1>
-        </div>
-        <div>
-          <h1>Participant counter</h1>
+      <ul className="flex items-center gap-2 py-4">
+        <li className="border p-4 rounded-full flex items-center text-sm font-medium">
+          <FaRegMoneyBillAlt style={{ marginRight: 5 }} />
+          10,000
+        </li>
+        <li className="border p-4 rounded-full flex items-center text-sm font-medium">
+          <TbTournament style={{ marginRight: 5 }} />
+          Single Elimination
+        </li>
+        <li className="border p-4 rounded-full flex items-center text-sm font-medium">
+          <CgCalendarDates style={{ marginRight: 5 }} />
+          Oct 20, 2023
+        </li>
+        <li className="border p-4 rounded-full flex items-center text-sm font-medium">
+          <HiUsers style={{ marginRight: 5 }} />
+            1/10
+        </li>
+      </ul>
+      <div className="my-12">
+        <h2 className="font-medium text-2xl mb-4">Rules</h2>
+        <ul className="list-disc ml-5">
+          <li>Rules 1</li>
+          <li>Rules 2</li>
+          <li>Rules 3</li>
+          <li>Rules 4</li>
+          <li>Rules 5</li>
+        </ul>
+      </div>
+      <div className="my-12">
+        <h2 className="font-medium text-2xl mb-4">Brackets</h2>
+        <img src="https://via.placeholder.com/1280x520" className="w-full rounded-md"/>
+      </div>
+      <div className="my-12">
+        <h2 className="font-medium text-2xl mb-4">Participants</h2>
+        <div className="flex flex-wrap gap-4">
+          {
+            [1,2,3,4,5,6,7].map((item, i) => (
+              <img src="https://via.placeholder.com/268x200" className="rounded-md" key={i}/>
+            ))
+          }
         </div>
       </div>
     </div>
