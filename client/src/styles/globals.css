@@ -6,4 +6,6 @@ body  {
   max-width: 1440px;
   margin: 0 auto;
   padding: 1rem;
+  background: #2e2e2e;
+  text-align: white;
 }

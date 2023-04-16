@@ -6,7 +6,7 @@ import { HiUsers } from "react-icons/hi";
 
 const tournament = () => {
   return (
-    <div className="mt-20">
+    <div className="mt-20 text-white">
       <div className="flex justify-between items-center border-2 border-r-0 border-l-0 border-t-0 py-6">
         <div>
           <h1 className="text-5xl font-bold mb-2">Title</h1>

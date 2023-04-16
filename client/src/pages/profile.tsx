@@ -6,7 +6,7 @@ import { HiUsers } from "react-icons/hi";
 
 const profile = () => {
   return (
-    <div className="mt-20">
+    <div className="mt-20 text-white">
       <div className="flex flex-col items-center justify-center text-center font-medium">
         <img src="https://via.placeholder.com/200x200" className="rounded-full mb-4"/>
         <div>

@@ -10,7 +10,7 @@ const playerLeaderboards = () => {
   return <>
     {
       playerLeaderboardsContent.map((item, i) => (
-        <div key={i} className="border-2 border-r-0 border-t-0 border-l-0 p-4 flex items-center justify-between hover:bg-gray-100 cursor-pointer" onClick={() => router.push(`/profile?id=${item.name}`)}>
+        <div key={i} className="bg-white rounded-md my-2 p-4 flex items-center justify-between cursor-pointer" onClick={() => router.push(`/profile?id=${item.name}`)}>
           <div className="flex items-center">
             <h1 className={`text-2xl text-gray-500 font-bold min-w-[70px] flex flex-col items-center ${i == 0 && "text-5xl !text-yellow-500"} ${i == 1 && "text-3xl !text-slate-500"} ${i == 2 && "text-3xl !text-amber-800"}`}>
               {i == 0 && <GiTrophyCup />}

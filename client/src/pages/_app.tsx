@@ -10,10 +10,10 @@ export default function App({ Component, pageProps }: AppProps) {
   return  <>
     {router.pathname != "/login" && 
       <>
-        <nav className="flex items-center justify-between">
+        <nav className="flex items-center justify-between text-white">
           <h1 className="font-medium text-xl" onClick={() => router.push("/")}>Logo</h1>
           <div className="flex ">
-            <button className="bg-blue-500 hover:bg-blue-600 px-[15px] text-white font-medium rounded-full mr-4 flex items-center"><AiOutlinePlus size={20} style={{ marginLeft: 2, fontWeight: "medium" }} /></button>
+            <button className="bg-blue-500 hover:bg-blue-600 px-[15px] text-white font-medium rounded-full mr-4 flex items-center"><AiOutlinePlus size={20} style={{ marginLeft: 2, fontWeight: "medium" }} onClick={() => router.push("/create")}/></button>
             <div className="flex cursor-pointer" onClick={() => router.push("/profile")}>
               <img src="https://via.placeholder.com/50x50" className="mr-2 rounded-full"/>
               <div>
@@ -23,11 +23,11 @@ export default function App({ Component, pageProps }: AppProps) {
             </div>
           </div>
         </nav>
-       {router.pathname !== "/profile" && router.pathname !== "/tournament" &&
+       {router.pathname !== "/profile" && router.pathname !== "/tournament" && router.pathname !== "/create" &&
         <ul className="mt-20 flex mb-4 gap-2 font-medium">
           {
             tabs().map((item, i) => (
-              <li key={i} className={`${router.pathname == item.route ? "bg-blue-500 text-white" : "hover:bg-gray-100"} p-2 cursor-pointer rounded-md flex`} onClick={() => router.push(item.route)}>
+              <li key={i} className={`${router.pathname == item.route ? "bg-blue-500" : ""} text-white p-2 cursor-pointer rounded-md flex`} onClick={() => router.push(item.route)}>
                 {item.icon}
                 <span>
                   {item.title}
