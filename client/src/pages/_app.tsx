@@ -13,12 +13,12 @@ export default function App({ Component, pageProps }: AppProps) {
         <nav className="flex items-center justify-between text-white text-gray-300">
           <h1 className="font-medium text-xl" onClick={() => router.push("/")}>Logo</h1>
           <div className="flex ">
-            <button className="bg-[#31AC47] hover:bg-[#2da142] px-[15px] text-white font-medium rounded-full mr-4 flex items-center"><AiOutlinePlus size={20} style={{ marginLeft: 2, fontWeight: "medium" }} onClick={() => router.push("/create")}/></button>
-            <div className="flex cursor-pointer" onClick={() => router.push("/profile")}>
+            <button className="bg-[#31AC47] hover:bg-[#2da142] px-[15px] text-white font-medium rounded-full mr-2 flex items-center" onClick={() => router.push("/create")}><AiOutlinePlus size={20} style={{ marginLeft: 2, fontWeight: "medium" }}/></button>
+            <div className="flex cursor-pointer relative group" onClick={() => router.push("/profile")}>
               <img src="https://via.placeholder.com/50x50" className="mr-2 rounded-full"/>
-              <div>
+              <div className="absolute bg-gray-700 text-gray-200 px-3 py-2 rounded-md -bottom-[120%] left-[50%] transform -translate-x-[50%] hidden group-hover:block">
                 <h3 className="text-md truncate">Godfrey</h3>
-                <p className="text-sm">Participant</p>
+                <p className="text-xs">Participant</p>
               </div>
             </div>
           </div>

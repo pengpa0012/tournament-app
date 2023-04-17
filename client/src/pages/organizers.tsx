@@ -14,7 +14,7 @@ const organizers = () => {
       <tbody>
         {
           [1,2,3,4,5].map((item, any) => (
-            <tr className="bg-[#1E1E1E] hover:bg-[#1a1a1a] text-gray-300 bg-white rounded-md my-2 flex text-center p-2 font-medium cursor-pointer" onClick={() => router.push(`/profile`)}>
+            <tr className="bg-[#1E1E1E] hover:bg-[#1a1a1a] text-gray-300 rounded-md my-2 flex text-center p-2 cursor-pointer" onClick={() => router.push(`/profile`)}>
               <td className="flex-1 text-xl">Tito Valdez</td>
               <td className="flex-1 text-xl">233</td>
             </tr>

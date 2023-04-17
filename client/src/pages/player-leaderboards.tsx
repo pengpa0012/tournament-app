@@ -18,11 +18,11 @@ const playerLeaderboards = () => {
               {item.rank}
             </h1> */}
             <img src="https://via.placeholder.com/120x120" className="rounded-full"/>
-            <h1 className="text-2xl mt-2 mb-4">{item.name}</h1>
+            <h1 className="text-lg font-medium mt-2 mb-4">{item.name}</h1>
           </div>
-          <ul className="flex items-center gap-2 justify-center">
-            <li className="flex items-center border border-gray-500 text-gray-300 rounded-full px-2 py-1"><GiTrophyCup style={{ marginRight: 5 }} /> {item.rank}</li>
-            <li className="flex items-center border border-gray-500 text-gray-300 rounded-full px-2 py-1"><GiSwordsEmblem style={{ marginRight: 5 }}/> {item.victories}</li>
+          <ul className="flex items-center gap-2 justify-center font-medium">
+            <li className={`flex items-center ${i == 0 ? "bg-yellow-600 text-white" : "bg-gray-600 text-gray-300"} rounded-full px-3 py-1 text-xs`}><GiTrophyCup style={{ marginRight: 5 }} /> {item.rank}</li>
+            <li className="flex items-center bg-gray-600 text-gray-300 rounded-full px-3 py-1 text-xs"><GiSwordsEmblem style={{ marginRight: 5 }}/> {item.victories}</li>
           </ul>
           {/* <h1 className="text-2xl flex items-center">
             <GiSwordsEmblem size={24} style={{ marginRight: 10}} />

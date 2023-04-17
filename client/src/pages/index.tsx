@@ -39,8 +39,8 @@ export default function Home() {
             [1,2,3,4,5].map((item: any, i: number) => (
               <tr className="text-center flex items-center bg-[#1E1E1E] hover:bg-[#1a1a1a] rounded-md my-2 cursor-pointer text-gray-300" key={i} onClick={() => router.push("/tournament")}>
                 <td className="p-2 flex flex-1">
-                  <img src="https://via.placeholder.com/400x200" className="w-full max-w-[150px]"/>
-                  <div className="text-left ml-2">
+                  <img src="https://via.placeholder.com/400x200" className="w-full max-w-[150px] rounded-md"/>
+                  <div className="text-left ml-4">
                     <h4 className="text-lg font-medium">Title</h4>
                     <p className="text-sm">Lorem ipsum dolor sit amet</p>
                   </div>
