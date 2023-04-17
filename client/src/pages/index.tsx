@@ -19,7 +19,7 @@ export default function Home() {
     <main>
       <table className="w-full">
         <thead>
-          <tr className="flex bg-blue-600 text-white py-4 rounded-tl-lg rounded-tr-lg">  
+          <tr className="flex bg-[#2E426E] text-white py-4 rounded-tl-lg rounded-tr-lg text-gray-300">  
             {
               tableHeader().map((item, i) => (
               <th className="flex-1" key={i}>
@@ -37,9 +37,9 @@ export default function Home() {
         <tbody>
           {
             [1,2,3,4,5].map((item: any, i: number) => (
-              <tr className="text-center flex items-center bg-white rounded-md my-2 cursor-pointer" key={i} onClick={() => router.push("/tournament")}>
-                <td className="py-2 flex flex-1">
-                  <img src="https://via.placeholder.com/400x200" className="mx-auto w-full max-w-[150px]"/>
+              <tr className="text-center flex items-center bg-[#1E1E1E] hover:bg-[#1a1a1a] rounded-md my-2 cursor-pointer text-gray-300" key={i} onClick={() => router.push("/tournament")}>
+                <td className="p-2 flex flex-1">
+                  <img src="https://via.placeholder.com/400x200" className="w-full max-w-[150px]"/>
                   <div className="text-left ml-2">
                     <h4 className="text-lg font-medium">Title</h4>
                     <p className="text-sm">Lorem ipsum dolor sit amet</p>

@@ -35,24 +35,24 @@ export const Login = () => {
   }
 
   return (
-    <div className="min-h-screen grid place-items-center">
+    <div className="min-h-screen grid place-items-center text-white">
       <div>
         <h2 className="text-center text-5xl font-bold">Welcome!</h2>
         <form className="flex gap-4 flex-col my-6 w-[300px] sm:w-[500px] font-medium" onSubmit={onHandleSubmit}>
           <div>
             <label>Email</label>
-            <input type="text" className="border-2 border-black rounded-md p-2 tex-xl w-full" placeholder="Enter your email" />
+            <input type="text" className="border-2 border-black rounded-md p-2 tex-xl w-full text-black" placeholder="Enter your email" />
           </div>
           <div>
             <label>Password</label>
-            <input type="password" className="border-2 border-black rounded-md p-2 tex-xl w-full" placeholder="Enter your password" />
+            <input type="password" className="border-2 border-black rounded-md p-2 tex-xl w-full text-black" placeholder="Enter your password" />
           </div>
           {
             isSignUp ?
             <>
              <div>
                 <label>Repeat Password</label>
-                <input type="password" className="border-2 border-black rounded-md p-2 tex-xl w-full" placeholder="Enter your password" />
+                <input type="password" className="border-2 border-black rounded-md p-2 tex-xl w-full text-black" placeholder="Enter your password" />
               </div>
               <div>
                 <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-md mb-1">Sign Up</button>
@@ -66,9 +66,8 @@ export const Login = () => {
             </div>
           }
         </form>
-        <div className="relative text-center">
-          <p className="font-medium bg-white inline relative z-20 px-2">Or, sign in with your Google Account</p>
-          <div className="absolute top-[50%] w-full h-[2px] bg-black"></div>
+        <div className="text-center">
+          <p className="font-medium inline relative z-20 px-2">Or, sign in with your Google Account</p>
         </div>
         <div id="signInBtn" className="my-4 flex justify-center"></div>
       </div>

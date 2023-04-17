@@ -6,6 +6,10 @@ body  {
   max-width: 1440px;
   margin: 0 auto;
   padding: 1rem;
-  background: #2e2e2e;
+  background: #292929;
   text-align: white;
+}
+
+.bg-blue-500 {
+  background: #4552FE !important;
 }

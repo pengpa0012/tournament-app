@@ -7,27 +7,31 @@ import { useRouter } from 'next/router';
 
 const playerLeaderboards = () => {
   const router = useRouter()
-  return <>
+  return <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-12">
     {
       playerLeaderboardsContent.map((item, i) => (
-        <div key={i} className="bg-white rounded-md my-2 p-4 flex items-center justify-between cursor-pointer" onClick={() => router.push(`/profile?id=${item.name}`)}>
-          <div className="flex items-center">
-            <h1 className={`text-2xl text-gray-500 font-bold min-w-[70px] flex flex-col items-center ${i == 0 && "text-5xl !text-yellow-500"} ${i == 1 && "text-3xl !text-slate-500"} ${i == 2 && "text-3xl !text-amber-800"}`}>
+        <div key={i} className="bg-[#1E1E1E] hover:bg-[#1a1a1a] rounded-md p-6 flex flex-col items-center cursor-pointer text-gray-300 text-center" onClick={() => router.push(`/profile?id=${item.name}`)}>
+          <div>
+            {/* <h1 className={`text-2xl text-gray-300 font-bold min-w-[70px] flex flex-col items-center ${i == 0 && "text-5xl !text-yellow-500"}`}>
               {i == 0 && <GiTrophyCup />}
               {i == 1 || i == 2 ? <BiMedal /> : ""}
               {item.rank}
-            </h1>
-            <img src="https://via.placeholder.com/120x120" className="rounded-full ml-4 mr-8"/>
-            <h1 className="text-2xl">{item.name}</h1>
+            </h1> */}
+            <img src="https://via.placeholder.com/120x120" className="rounded-full"/>
+            <h1 className="text-2xl mt-2 mb-4">{item.name}</h1>
           </div>
-          <h1 className="text-2xl flex items-center">
+          <ul className="flex items-center gap-2 justify-center">
+            <li className="flex items-center border border-gray-500 text-gray-300 rounded-full px-2 py-1"><GiTrophyCup style={{ marginRight: 5 }} /> {item.rank}</li>
+            <li className="flex items-center border border-gray-500 text-gray-300 rounded-full px-2 py-1"><GiSwordsEmblem style={{ marginRight: 5 }}/> {item.victories}</li>
+          </ul>
+          {/* <h1 className="text-2xl flex items-center">
             <GiSwordsEmblem size={24} style={{ marginRight: 10}} />
             <span>{item.victories} Victories</span>
-          </h1>
+          </h1> */}
         </div>
       ))
     }
-  </>
+  </div>
   
 }
 

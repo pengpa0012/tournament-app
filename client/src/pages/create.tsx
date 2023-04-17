@@ -2,7 +2,7 @@ import React from 'react'
 
 const create = () => {
   return (
-    <div>create</div>
+    <div className="text-white">create</div>
   )
 }
 
