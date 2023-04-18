@@ -38,7 +38,7 @@ const create = () => {
               }
             </select>
           </div>
-          <textarea className="min-h-[210px] p-4 max-h-[400px] bg-[#1E1E1E] w-full border border-[#323437] rounded-md focus:outline-none" placeholder="Enter Rules"></textarea>
+          <textarea className="min-h-[210px] p-4 bg-[#1E1E1E] w-full border border-[#323437] rounded-md focus:outline-none resize-none" placeholder="Enter Rules"></textarea>
         </form>
       </div>
       <div className="flex gap-4 justify-center mt-12 text-white text-xl">
