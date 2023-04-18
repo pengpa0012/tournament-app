@@ -3,8 +3,12 @@ import { FaRegMoneyBillAlt } from "react-icons/fa";
 import { TbTournament } from "react-icons/tb";
 import { CgCalendarDates } from "react-icons/cg";
 import { HiUsers } from "react-icons/hi";
+import { playerLeaderboardsContent } from '@/Content';
+import { PlayerCard } from '@/Components/PlayerCard';
+import { useRouter } from 'next/router';
 
 const tournament = () => {
+  const router = useRouter()
   return (
     <div className="mt-20 text-white">
       <div className="flex justify-between items-center border-2 border-r-0 border-l-0 border-t-0 py-6">
@@ -50,8 +54,8 @@ const tournament = () => {
         <h2 className="font-medium text-2xl mb-4">Participants</h2>
         <div className="flex flex-wrap gap-4">
           {
-            [1,2,3,4,5,6,7].map((item, i) => (
-              <img src="https://via.placeholder.com/268x200" className="rounded-md" key={i}/>
+            playerLeaderboardsContent.map((item, i) => (
+              <PlayerCard key={i} profile={item} onClick={() => router.push(`/profile?id=${item.name}`)}/>
             ))
           }
         </div>
