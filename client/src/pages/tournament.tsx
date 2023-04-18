@@ -12,6 +12,8 @@ const tournament = () => {
   const router = useRouter()
   const [tab, setTab] = useState(0)
   const array = [1,2,3,4]
+  const half = array.slice(0,Math.ceil(array.length/2))
+  const halfHalf = array.slice(0,Math.ceil(half.length/2))
 
   return (
     <div className="mt-20 text-white">
@@ -69,7 +71,7 @@ const tournament = () => {
               </div>
               <div>
                 {
-                  array.slice(0,Math.ceil(array.length/2)).map(item => (
+                  half.map(item => (
                     <div className="my-8">
                       <div className="bg-gray-600 w-[200px] h-[40px] rounded-md mb-2 p-2"></div>
                       <div className="bg-gray-600 w-[200px] h-[40px] rounded-md p-2"></div>
@@ -77,13 +79,25 @@ const tournament = () => {
                   ))
                 }
               </div>
-              {
-                array.slice(0,Math.ceil(array.length/2)).length != 1 &&
-                <div className="my-8">
-                  <div className="bg-gray-600 w-[200px] h-[40px] rounded-md mb-2 p-2"></div>
-                  <div className="bg-gray-600 w-[200px] h-[40px] rounded-md p-2"></div>
-                </div>
-              }
+              <div>
+                {
+                  halfHalf.length != 1 && halfHalf.map(item => (
+                    <div className="my-8">
+                      <div className="bg-gray-600 w-[200px] h-[40px] rounded-md mb-2 p-2"></div>
+                      <div className="bg-gray-600 w-[200px] h-[40px] rounded-md p-2"></div>
+                    </div>
+                  ))
+                }
+              </div>
+              <div>
+                {
+                  array.slice(0,Math.ceil(array.length/2)).length != 1 &&
+                  <div className="my-8">
+                    <div className="bg-gray-600 w-[200px] h-[40px] rounded-md mb-2 p-2"></div>
+                    <div className="bg-gray-600 w-[200px] h-[40px] rounded-md p-2"></div>
+                  </div>
+                }
+              </div>
               <div className="bg-gray-600 w-[200px] h-[40px] rounded-md p-2"></div>
             </div>
           </div>

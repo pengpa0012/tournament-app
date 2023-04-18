@@ -32,7 +32,7 @@ const create = () => {
             <select className="bg-[#1E1E1E] border border-[#323437] rounded-md flex-1 p-4 focus:outline-none">
               <option value={0}>No. of Participants</option>
               {
-                [2,4,8,12].map((item, i) => (
+                [2,4,8].map((item, i) => (
                   <option value={item} key={i}>{item}</option>
                 ))
               }
