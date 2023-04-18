@@ -1,7 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { TbUpload } from "react-icons/tb";
 
 const create = () => {
+  const [previewIMG, setPreviewIMG] = useState("")
+  
+  const onChangeProfile = (file: Blob | MediaSource) => {
+    if(file) {
+      const blob = window.URL.createObjectURL(file)
+      setPreviewIMG(blob)
+    }
+  }
   
   const onCreate = (e: any) => {
     e.preventDefault()
@@ -13,14 +21,18 @@ const create = () => {
       <div className="flex gap-4">
         <div className="flex-1">
           <label htmlFor="file">
-            <div className="w-full min-h-full rounded-md bg-[#1E1E1E] grid place-items-center text-gray-300 text-center cursor-pointer">
-              <div>
-                <TbUpload size={30} style={{ marginInline: "auto" }} />
-                <p className="text-xl mt-4">Upload Banner</p>
+            {
+              previewIMG ? <img src={previewIMG} className="w-full max-h-[367px] object-contain p-2 bg-[#1E1E1E] border border-[#323437] rounded-md"/>
+              :
+              <div className="w-full min-h-full rounded-md bg-[#1E1E1E] grid place-items-center text-gray-300 text-center cursor-pointer border border-[#323437]">
+                <div>
+                  <TbUpload size={30} style={{ marginInline: "auto" }} />
+                  <p className="text-xl mt-4">Upload Banner</p>
+                </div>
               </div>
-            </div>
+            }           
           </label>
-          <input type="file" id='file' className="hidden"/>
+          <input type="file" id='file' className="hidden" accept='.png,.jpg,.jpeg' onChange={(e) => onChangeProfile(e.target.files![0])}/>
         </div>
         <form className="flex flex-col items-stretch flex-1 text-gray-300 text-xl" onSubmit={onCreate}>
           <div className="flex gap-4">

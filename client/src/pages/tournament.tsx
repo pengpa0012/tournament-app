@@ -105,7 +105,7 @@ const tournament = () => {
         { tab == 1 && 
         <>
         <h2 className="font-medium text-2xl mb-4">Rules</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum veritatis culpa, soluta provident maxime perferendis odit minima ut velit quibusdam libero, rem voluptas eaque animi cumque praesentium. Facilis reiciendis sequi sunt! Adipisci!</p>
+          <p className="text-gray-300">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum veritatis culpa, soluta provident maxime perferendis odit minima ut velit quibusdam libero, rem voluptas eaque animi cumque praesentium. Facilis reiciendis sequi sunt! Adipisci!</p>
         </>
       }
       </div>
