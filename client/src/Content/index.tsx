@@ -1,8 +1,10 @@
 import { GiCrossedSwords, GiOrganigram, GiMoneyStack } from "react-icons/gi";
-import { BsPeopleFill } from "react-icons/bs";
+import { BsPeopleFill, BsListCheck } from "react-icons/bs";
 import { AiOutlineUnorderedList } from "react-icons/ai";
 import { MdOutlineLeaderboard } from "react-icons/md";
 import { VscOrganization } from "react-icons/vsc";
+import { TbTournament } from "react-icons/tb";
+import { HiUsers } from "react-icons/hi";
 
 export const tabs = () => {
   return [
@@ -20,6 +22,23 @@ export const tabs = () => {
       icon: <VscOrganization size={24} style={{ marginRight: 10 }} />,
       title: "Organizers",
       route: "/organizers"
+    }
+  ]
+}
+
+export const tournamentTabs = () => {
+  return [
+    {
+      icon: <TbTournament size={24} style={{ marginRight: 10 }} />,
+      title: "Bracket",
+    },
+    {
+      icon: <BsListCheck size={24} style={{ marginRight: 10 }} />,
+      title: "Rules"
+    },
+    {
+      icon: <HiUsers size={24} style={{ marginRight: 10 }} />,
+      title: "Participants"
     }
   ]
 }
