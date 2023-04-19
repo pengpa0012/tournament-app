@@ -60,9 +60,10 @@ const tournament = () => {
             <h2 className="font-medium text-2xl mb-4">Brackets</h2>
             <div className="flex items-center gap-4">
               <div>
+                <h3 className="text-center font-medium">Round 1</h3>
                 {
-                  array.map(item => (
-                    <div className="my-8">
+                  array.map((item, i) => (
+                    <div className="my-8" key={i}>
                       <div className="bg-gray-600 hover:bg-gray-700 w-[200px] h-[40px] rounded-md mb-2 p-2 flex justify-between">
                         <span>Player {item}</span>
                         <span>0</span>
@@ -76,9 +77,10 @@ const tournament = () => {
                 } 
               </div>
               <div>
+                {array.length != 1 && <h3 className="text-center font-medium">Round 2</h3>}
                 {
-                  array.length != 1 && half.map(item => (
-                    <div className="my-8">
+                  array.length != 1 && half.map((item, i) => (
+                    <div className="my-8" key={i}>
                       <div className="bg-gray-600 hover:bg-gray-700 w-[200px] h-[40px] rounded-md mb-2 p-2 flex justify-between">
                         <span>Winner of</span>
                         <span>0</span>
@@ -92,9 +94,10 @@ const tournament = () => {
                 }
               </div>
               <div>
+                {halfHalf.length != 1 && <h3 className="text-center font-medium">Round 3</h3>}
                 {
-                  halfHalf.length != 1 && halfHalf.map(item => (
-                    <div className="my-8">
+                  halfHalf.length != 1 && halfHalf.map((item, i) => (
+                    <div className="my-8" key={i}>
                       <div className="bg-gray-600 hover:bg-gray-700 w-[200px] h-[40px] rounded-md mb-2 p-2 flex justify-between">
                         <span>Winner of</span>
                         <span>0</span>
@@ -108,6 +111,7 @@ const tournament = () => {
                 }
               </div>
               <div>
+                {array.slice(0,Math.ceil(array.length/2)).length != 1 && <h3 className="text-center font-medium">{halfHalf.length == 1 ? "Round 3" : "Round 4"}</h3>}
                 {
                   array.slice(0,Math.ceil(array.length/2)).length != 1 &&
                   <div className="my-8">
@@ -122,7 +126,10 @@ const tournament = () => {
                   </div>
                 }
               </div>
-              <div className="bg-gray-600 hover:bg-gray-700 w-[200px] h-[40px] rounded-md p-2 flex justify-between">Champion</div>
+              <div>
+                <h3 className="text-center font-medium">Champion</h3>
+                <div className="bg-gray-600 hover:bg-gray-700 w-[200px] h-[40px] rounded-md p-2 flex justify-between my-8">Name</div>
+              </div>
             </div>
           </div>
         }
