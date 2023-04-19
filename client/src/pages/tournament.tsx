@@ -63,18 +63,30 @@ const tournament = () => {
                 {
                   array.map(item => (
                     <div className="my-8">
-                      <div className="bg-gray-600 w-[200px] h-[40px] rounded-md mb-2 p-2">Player {item}</div>
-                      <div className="bg-gray-600 w-[200px] h-[40px] rounded-md p-2">Opponent {item}</div>
+                      <div className="bg-gray-600 hover:bg-gray-700 w-[200px] h-[40px] rounded-md mb-2 p-2 flex justify-between">
+                        <span>Player {item}</span>
+                        <span>0</span>
+                      </div>
+                      <div className="bg-gray-600 hover:bg-gray-700 w-[200px] h-[40px] rounded-md p-2 flex justify-between">
+                        <span>Player {item}</span>
+                        <span>0</span>
+                      </div>
                     </div>
                   ))
                 } 
               </div>
               <div>
                 {
-                  half.map(item => (
+                  array.length != 1 && half.map(item => (
                     <div className="my-8">
-                      <div className="bg-gray-600 w-[200px] h-[40px] rounded-md mb-2 p-2"></div>
-                      <div className="bg-gray-600 w-[200px] h-[40px] rounded-md p-2"></div>
+                      <div className="bg-gray-600 hover:bg-gray-700 w-[200px] h-[40px] rounded-md mb-2 p-2 flex justify-between">
+                        <span>Winner of</span>
+                        <span>0</span>
+                      </div>
+                      <div className="bg-gray-600 hover:bg-gray-700 w-[200px] h-[40px] rounded-md p-2 flex justify-between">
+                        <span>Winner of</span>
+                        <span>0</span>
+                      </div>
                     </div>
                   ))
                 }
@@ -83,8 +95,14 @@ const tournament = () => {
                 {
                   halfHalf.length != 1 && halfHalf.map(item => (
                     <div className="my-8">
-                      <div className="bg-gray-600 w-[200px] h-[40px] rounded-md mb-2 p-2"></div>
-                      <div className="bg-gray-600 w-[200px] h-[40px] rounded-md p-2"></div>
+                      <div className="bg-gray-600 hover:bg-gray-700 w-[200px] h-[40px] rounded-md mb-2 p-2 flex justify-between">
+                        <span>Winner of</span>
+                        <span>0</span>
+                      </div>
+                      <div className="bg-gray-600 hover:bg-gray-700 w-[200px] h-[40px] rounded-md p-2 flex justify-between">
+                        <span>Winner of</span>
+                        <span>0</span>
+                      </div>
                     </div>
                   ))
                 }
@@ -93,12 +111,18 @@ const tournament = () => {
                 {
                   array.slice(0,Math.ceil(array.length/2)).length != 1 &&
                   <div className="my-8">
-                    <div className="bg-gray-600 w-[200px] h-[40px] rounded-md mb-2 p-2"></div>
-                    <div className="bg-gray-600 w-[200px] h-[40px] rounded-md p-2"></div>
+                    <div className="bg-gray-600 hover:bg-gray-700 w-[200px] h-[40px] rounded-md mb-2 p-2 flex justify-between">
+                      <span>Winner of</span>
+                      <span>0</span>
+                    </div>
+                    <div className="bg-gray-600 hover:bg-gray-700 w-[200px] h-[40px] rounded-md p-2 flex justify-between">
+                      <span>Winner of</span>
+                      <span>0</span>
+                    </div>
                   </div>
                 }
               </div>
-              <div className="bg-gray-600 w-[200px] h-[40px] rounded-md p-2"></div>
+              <div className="bg-gray-600 hover:bg-gray-700 w-[200px] h-[40px] rounded-md p-2 flex justify-between">Champion</div>
             </div>
           </div>
         }
