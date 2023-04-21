@@ -15,18 +15,11 @@ const userSchema = new mongoose.Schema({
     enum: ['participant', 'organizer'],
     default: "participant",
     required: true
-  }
-})
-
-const tournamentUserSchema = new mongoose.Schema({
-  username: {
-    type: Schema.Types.ObjectId,
-    ref: "User"
   },
   totalTournamentsJoined: {
     type: Number,
   },
-  totalTournammentsOrganized: {
+  totalTournamentsOrganized: {
     type: Number
   },
   Stats: {
@@ -57,6 +50,7 @@ const tournamentSchema = new mongoose.Schema({
   },
   date: {
     type: Date,
+    default: Date.now(),
     required: true
   },
   type: {
@@ -101,3 +95,8 @@ const tournamentSchema = new mongoose.Schema({
     }]
   }],
 })
+
+module.exports = {
+  Users: mongoose.model('user', userSchema),
+  Tournament: mongoose.model('post', tournamentSchema),
+}

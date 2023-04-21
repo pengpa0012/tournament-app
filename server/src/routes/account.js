@@ -37,7 +37,25 @@ router.post("/login", async (req, res) => {
 })
 
 router.get("/getUsers", async (req, res) => {
-  
+  const { type } = req.query
+  const result = await Users.find({type})
+
+  if(result) {
+    res.status(200).send({result})
+  } else {
+    res.status(500).send({message: "Error Get Users"})
+  }
+})
+
+router.get("/getUserProfile", async (req, res) => {
+  const { _id } = req.query
+  const result = await Users.find({_id})
+
+  if(result) {
+    res.status(200).send({result})
+  } else {
+    res.status(500).send({message: "Error Get User"})
+  }
 })
 
 module.exports = router
