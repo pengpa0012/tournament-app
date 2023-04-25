@@ -24,14 +24,26 @@ router.post("/createTournament", async (req, res) => {
 })
 
 router.post("/updateTournament", async (req, res) => {
-  
 })
 
 router.post("/deleteTournament", async (req, res) => {
+  const { _id } = req.query
+
+  const result = await Tournament.deleteOne({_id})
+
+  if(result) {
+    res.status(200).send({ message: result })
+  } else {
+    res.status(200).send({ message: "Error Delete Tournament" })
+  }
   
 })
 
 router.post("/joinTournament", async (req, res) => {
+  
+})
+
+router.post("/leaveTournament", async (req, res) => {
   
 })
 
