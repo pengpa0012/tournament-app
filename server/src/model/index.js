@@ -61,10 +61,10 @@ const tournamentSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
-  participants: {
+  participants: [{
     type: Schema.Types.ObjectId,
     ref: "User"
-  },
+  }],
   rounds: [{
     roundNumber: {
       type: Number

@@ -40,7 +40,15 @@ router.post("/deleteTournament", async (req, res) => {
 })
 
 router.post("/joinTournament", async (req, res) => {
-  
+  const { _id, user_id } = req.query
+
+  const result = await Tournament.findOneAndUpdate({_id},{participants:{user_id}})
+
+  if(result) {
+    res.status(200).send({ message: "Tournament Joined" })
+  } else {
+    res.status(200).send({ message: "Error Joined Tournament" })
+  }
 })
 
 router.post("/leaveTournament", async (req, res) => {
@@ -48,5 +56,11 @@ router.post("/leaveTournament", async (req, res) => {
 })
 
 router.get("/getTournaments", async (req, res) => {
-  
+  const result = await Tournament.find({})
+
+  if(result) {
+    res.status(200).send({ message: result })
+  } else {
+    res.status(200).send({ message: "Error Get Tournament" })
+  }
 })
