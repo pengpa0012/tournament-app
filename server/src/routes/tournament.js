@@ -52,7 +52,15 @@ router.post("/joinTournament", async (req, res) => {
 })
 
 router.post("/leaveTournament", async (req, res) => {
-  
+  const { _id, user_id } = req.query
+
+  const result = await Tournament.updateOne({_id},{$pull:{participants:{user_id}}})
+
+  if(result) {
+    res.status(200).send({ message: "Tournament Leaved" })
+  } else {
+    res.status(200).send({ message: "Error Leave Tournament" })
+  }
 })
 
 router.get("/getTournaments", async (req, res) => {
