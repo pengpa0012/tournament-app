@@ -24,6 +24,15 @@ router.post("/createTournament", async (req, res) => {
 })
 
 router.post("/updateTournament", async (req, res) => {
+  const { _id, values } = req.query
+
+  const result = await Tournament.findOneAndUpdate({_id},{...values})
+
+  if(result) {
+    res.status(200).send({ message: "Tournament Updated" })
+  } else {
+    res.status(200).send({ message: "Error Update Tournament" })
+  }
 })
 
 router.post("/deleteTournament", async (req, res) => {
